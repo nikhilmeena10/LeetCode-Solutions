@@ -1,5 +1,7 @@
 public class _99_Recover_Binary_Search_Tree {
 
+    //See Morris traversal
+
     TreeNode firstElement = null;
     TreeNode secondElement = null;
     TreeNode prevElement = new TreeNode(Integer.MIN_VALUE);
