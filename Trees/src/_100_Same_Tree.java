@@ -42,7 +42,7 @@ public class _100_Same_Tree {
 
     //Using single queue
     public boolean isSameTreeQueue(TreeNode p, TreeNode q) {
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();  //LinkedList allows nulls
         queue.add(p);
         queue.add(q);
         while (!queue.isEmpty()) {
