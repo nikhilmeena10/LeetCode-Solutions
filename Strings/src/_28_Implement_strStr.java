@@ -30,4 +30,52 @@ public class _28_Implement_strStr {
         return -1;
     }
 
+    //KMP
+    public int strStrKMP(String haystack, String needle) {
+        if (needle.equals("")) return 0;
+        if (haystack.equals("")) return -1;
+        int n = haystack.length();
+        int m = needle.length();
+        int[] lps = new int[m];
+        int j = 0;
+        computeLPSArray(needle, m, lps);
+        int i = 0;
+        while (i < n) {
+            if (needle.charAt(j) == haystack.charAt(i)) {
+                i++;
+                j++;
+            }
+            if (j == m) {
+                return i - j;
+            } else if (i < n && needle.charAt(j) != haystack.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i = i + 1;
+                }
+            }
+        }
+        return -1;
+    }
+
+    private void computeLPSArray(String pat, int m, int[] lps) {
+        int len = 0;
+        int i = 1;
+        lps[0] = 0;
+        while (i < m) {
+            if (pat.charAt(i) == pat.charAt(len)) {
+                len++;
+                lps[i] = len;
+                i++;
+            } else {
+                if (len != 0) {
+                    len = lps[len - 1];
+                } else {
+                    lps[i] = len;
+                    i++;
+                }
+            }
+        }
+    }
+
 }
