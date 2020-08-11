@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
 public class _11 {
+
+    //check discuss on count/bucket sort technique
+    //plus also post on whether sorting allowed in interview or not
     public int hIndex(int[] citations) {
         int len = citations.length;
         if (len == 0) return 0;
