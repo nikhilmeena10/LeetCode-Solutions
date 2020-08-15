@@ -5,7 +5,7 @@ public class _1049_Last_Stone_Weight_II {
     //there exists a subset with sum as close to total_sum/2 as possible. This closest sum can then
     //be used to find the minimum difference as S1-S2 or (total_sum - S2) -S2 = total_sum - 2*S2.
     //To check if there exists a subset from the given array with sum equal to any of 1...total_sum/2
-    //we can use a knapsack style dp. 
+    //we can use a knapsack style dp.
     public int lastStoneWeightII(int[] stones) {
         int total = 0;
         int n = stones.length;
