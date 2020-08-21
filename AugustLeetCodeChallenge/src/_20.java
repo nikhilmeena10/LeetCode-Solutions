@@ -47,6 +47,6 @@ public class _20 {
             this.next = next;
         }
     }
-    
+
 
 }
